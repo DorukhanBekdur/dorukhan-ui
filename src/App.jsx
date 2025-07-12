@@ -4,13 +4,22 @@ import Button from "./components/Button/Button";
 function App() {
   return (
     <>
-      <div style={{ padding: "2rem" }}>
+      <div
+        style={{
+          padding: "2rem",
+          display: "flex",
+          gap: "1rem",
+          flexWrap: "wrap",
+        }}
+      >
         <Button>Primary</Button>
-        <Button variant="outline" style={{ marginLeft: "1rem" }}>
-          Outline
-        </Button>
-        <Button size="lg" style={{ marginLeft: "1rem" }}>
-          Large
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button size="sm">Small</Button>
+        <Button size="lg">Large</Button>
+        <Button disabled>Disabled</Button>
+        <Button variant="outline" disabled>
+          Disabled Outline
         </Button>
       </div>
     </>
