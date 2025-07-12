@@ -1,21 +1,27 @@
 import { useState } from "react";
-import Textarea from "./components/Textarea/Textarea";
+import Select from "./components/Select/Select";
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [language, setLanguage] = useState("");
+
+  const languageOptions = [
+    { label: "Turkish", value: "tr" },
+    { label: "English", value: "en" },
+    { label: "German", value: "de" },
+  ];
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "600px" }}>
-      <Textarea
-        label="Your Message"
-        placeholder="Enter something..."
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
+    <div style={{ padding: "2rem", maxWidth: "400px" }}>
+      <Select
+        label="Select Language"
+        options={languageOptions}
+        value={language}
+        onChange={(e) => setLanguage(e.target.value)}
       />
 
-      <Textarea label="Description" error="This field cannot be left blank" />
+      <Select label="Category" options={[]} error="Failed to load options" />
 
-      <Textarea label="Comment" disabled />
+      <Select label="Status" options={languageOptions} disabled />
     </div>
   );
 }

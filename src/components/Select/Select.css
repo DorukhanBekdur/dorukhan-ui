@@ -1,0 +1,42 @@
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+.select-label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.select-field {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+  background-color: white;
+}
+
+.select-field:focus {
+  border-color: #73b1a6;
+  outline: none;
+}
+
+.select-error {
+  border-color: red;
+}
+
+.select-error-message {
+  margin-top: 4px;
+  color: red;
+  font-size: 14px;
+}
+
+.disabled .select-field {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
