@@ -1,27 +1,30 @@
 import { useState } from "react";
-import Select from "./components/Select/Select";
+import Checkbox from "./components/Checkbox/Checkbox";
 
 function App() {
-  const [language, setLanguage] = useState("");
-
-  const languageOptions = [
-    { label: "Turkish", value: "tr" },
-    { label: "English", value: "en" },
-    { label: "German", value: "de" },
-  ];
+  const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "400px" }}>
-      <Select
-        label="Select Language"
-        options={languageOptions}
-        value={language}
-        onChange={(e) => setLanguage(e.target.value)}
+    <div style={{ padding: "2rem" }}>
+      <Checkbox
+        label="I agree to the terms and conditions"
+        checked={isChecked}
+        onChange={() => setIsChecked(!isChecked)}
       />
 
-      <Select label="Category" options={[]} error="Failed to load options" />
+      <Checkbox
+        label="Disabled checkbox"
+        checked={false}
+        onChange={() => {}}
+        disabled
+      />
 
-      <Select label="Status" options={languageOptions} disabled />
+      <Checkbox
+        label="Checkbox with error"
+        checked={false}
+        onChange={() => {}}
+        error="You must accept the terms"
+      />
     </div>
   );
 }
