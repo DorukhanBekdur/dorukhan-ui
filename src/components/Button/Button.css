@@ -1,0 +1,45 @@
+.btn {
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: var(--btn-padding);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-weight: 500;
+}
+
+/* Variants */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #5a988d;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Sizes */
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.btn-md {
+  padding: 10px 16px;
+  font-size: 16px;
+}
+
+.btn-lg {
+  padding: 14px 22px;
+  font-size: 18px;
+}

@@ -1,0 +1,11 @@
+:root {
+  --color-primary: #73b1a6;
+  --color-accent: #f7ba34;
+  --color-dark: #333333;
+  --color-light: #f7f7f7;
+
+  --font-base: "Segoe UI", sans-serif;
+
+  --btn-radius: 8px;
+  --btn-padding: 10px 16px;
+}
