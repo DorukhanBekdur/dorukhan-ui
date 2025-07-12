@@ -1,26 +1,21 @@
 import { useState } from "react";
-import Input from "./components/Input/Input";
+import Textarea from "./components/Textarea/Textarea";
 
 function App() {
-  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "400px" }}>
-      <Input
-        label="Name"
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+    <div style={{ padding: "2rem", maxWidth: "600px" }}>
+      <Textarea
+        label="Your Message"
+        placeholder="Enter something..."
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
       />
 
-      <Input
-        label="E-mail"
-        placeholder="example@mail.com"
-        type="email"
-        error="Invalid e-mail"
-      />
+      <Textarea label="Description" error="This field cannot be left blank" />
 
-      <Input label="Şifre" type="password" placeholder="********" disabled />
+      <Textarea label="Comment" disabled />
     </div>
   );
 }
