@@ -1,29 +1,52 @@
 import { useState } from "react";
-import Checkbox from "./components/Checkbox/Checkbox";
+import Radio from "./components/Radio/Radio";
 
 function App() {
-  const [isChecked, setIsChecked] = useState(false);
+  const [gender, setGender] = useState("");
 
   return (
     <div style={{ padding: "2rem" }}>
-      <Checkbox
-        label="I agree to the terms and conditions"
-        checked={isChecked}
-        onChange={() => setIsChecked(!isChecked)}
+      <p style={{ fontWeight: "bold", marginBottom: "0.5rem" }}>
+        Select Gender:
+      </p>
+      <Radio
+        label="Male"
+        name="gender"
+        value="male"
+        checked={gender === "male"}
+        onChange={(e) => setGender(e.target.value)}
+      />
+      <Radio
+        label="Female"
+        name="gender"
+        value="female"
+        checked={gender === "female"}
+        onChange={(e) => setGender(e.target.value)}
+      />
+      <Radio
+        label="Other"
+        name="gender"
+        value="other"
+        checked={gender === "other"}
+        onChange={(e) => setGender(e.target.value)}
       />
 
-      <Checkbox
-        label="Disabled checkbox"
+      <Radio
+        label="Disabled Option"
+        name="gender"
+        value="disabled"
         checked={false}
         onChange={() => {}}
         disabled
       />
 
-      <Checkbox
-        label="Checkbox with error"
+      <Radio
+        label="With Error"
+        name="gender"
+        value="error"
         checked={false}
         onChange={() => {}}
-        error="You must accept the terms"
+        error="You must select a valid option"
       />
     </div>
   );
